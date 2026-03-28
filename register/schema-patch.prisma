@@ -1,0 +1,20 @@
+// ─── Patch à appliquer dans prisma/schema.prisma ─────────────────────────────
+// Ajouter le champ `specialization` et `code` + `domain` sur Cluster
+
+// MODÈLE USER — ajouter :
+model User {
+  // ... vos champs existants ...
+  specialization  String?    // ID de la spécialisation (ex: "e3-sft")
+  // ... reste de vos champs ...
+}
+
+// MODÈLE CLUSTER — ajouter :
+model Cluster {
+  // ... vos champs existants ...
+  code    String?    // ex: "E3", "C1"
+  domain  String?    // ex: "engineering", "health", "business"
+  // ... reste de vos champs ...
+}
+
+// Après modification → exécuter :
+// npx prisma db push --accept-data-loss

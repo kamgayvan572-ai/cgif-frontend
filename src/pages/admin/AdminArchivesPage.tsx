@@ -1,14 +1,19 @@
+
+import { Card, EmptyState } from '../../components/ui/PageShell';
+
 const F = "'Plus Jakarta Sans', sans-serif";
+const VERT = '#0D2818';
+
 export default function AdminArchivesPage() {
   return (
-    <div style={{ fontFamily: F, padding: 24 }}>
-      <h1 style={{ fontSize: 22, fontWeight: 700, color: '#0D2818', marginBottom: 16 }}>
-        Archives IA
-      </h1>
-      <div style={{ background: '#fff', borderRadius: 16, padding: 32, border: '1px solid #E5E7EB', textAlign: 'center' }}>
-        <div style={{ fontSize: 48, marginBottom: 12 }}>🚧</div>
-        <p style={{ color: '#6B7280', fontSize: 14 }}>Connectez votre API backend pour activer cette vue.</p>
+    <div style={{ fontFamily:F, display:'flex', flexDirection:'column', gap:20 }}>
+      <div style={{ background:`linear-gradient(135deg, ${VERT} 0%, #13883C 100%)`, borderRadius:20, padding:'24px 28px', color:'#fff' }}>
+        <div style={{ fontSize:11, fontWeight:600, color:'rgba(255,255,255,.55)', textTransform:'uppercase', letterSpacing:'.07em', marginBottom:6 }}>Administration</div>
+        <div style={{ fontSize:22, fontWeight:700 }}>🗃️ Archives & Documents IA</div>
       </div>
+      <Card>
+        <EmptyState icon="🗃️" title="Archives & Documents IA" desc="Section connectée à l'API — les routes /clusters, /polls, /documents, /announcements, /events, /posts, /nda et /settings sont disponibles dans src/services/api.ts." />
+      </Card>
     </div>
   );
 }
